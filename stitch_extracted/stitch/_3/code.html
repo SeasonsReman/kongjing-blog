@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>禅意极简内容归档空间</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Noto+Serif+SC:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3617cf",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#141121",
+                        glass: "rgba(255, 255, 255, 0.65)",
+                        "glass-border": "rgba(255, 255, 255, 0.4)",
+                    },
+                    fontFamily: {
+                        display: ["Manrope", "sans-serif"],
+                        serif: ["Noto Serif SC", "serif"],
+                    },
+                    borderRadius: {
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .serif-font {
+            font-family: 'Noto Serif SC', serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(54, 23, 207, 0.2);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(54, 23, 207, 0.4);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen w-full overflow-hidden bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary/20">
+<div class="fixed inset-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-80 pointer-events-none" data-alt="Soft drifting clouds at sunset over calm water" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDO1ma4XHtEazT4jxlqPWqKcBaSp5xvW2LVavfBXNRbbn_YVN317ipwWwrmOjK09IHSa_U3MKL-GpX6Pvgm-f4ghsQb5y9xfo1DRW9npim9vlQRuDbQhAQP2_Za6-U5EHieJ7gawHo-vFBiD6hSn6UYcWQQ6CMLuOMbHdzxj1gNHOwRF6siySlaZn9ZEDbVHParhwqa2fHvThxpQDbJ5JoZT3n_r4ICIm5p7FTNU33y9gs_hUrsQFSqvz3QzrNElq2tbUGOf2O2rZLY');">
+</div>
+<div class="fixed inset-0 z-0 bg-gradient-to-b from-white/30 to-white/10 dark:from-black/30 dark:to-black/50 pointer-events-none"></div>
+<div class="relative z-10 flex h-screen w-full flex-col">
+<header class="flex items-center justify-between px-8 py-5 glass-panel mx-6 mt-6 rounded-2xl shadow-sm border border-white/40">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[24px]">all_inclusive</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight serif-font text-slate-800 dark:text-slate-100">空 · 境 <span class="text-sm font-normal opacity-60 ml-2 tracking-wider font-display">ARCHIVE</span></h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-12">
+<a class="text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white text-sm font-medium transition-colors" href="#">首页</a>
+<a class="text-primary font-semibold dark:text-white text-sm transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full" href="#">归档</a>
+<a class="text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white text-sm font-medium transition-colors" href="#">灵感</a>
+<a class="text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white text-sm font-medium transition-colors" href="#">关于</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:text-primary transition-colors rounded-full hover:bg-white/50">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary transition-colors rounded-full hover:bg-white/50">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-px h-6 bg-slate-300/50 mx-1"></div>
+<div class="w-9 h-9 rounded-full overflow-hidden border border-white shadow-sm cursor-pointer" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-dK8bAheCPNUnqkq4tU6xVrKQ0AKRnmetDbGaxzcXbauumD_aUiSkTFqq6JMr2SSJc0UcjY7-gBH3V0Nrv0rrK7wOEJtLtjb91CsAeHojXNmOB7s90naayKuAef_fE-n36ccQh9_UL8Eznve2zw1DikySZTBLWianO8hCR-mYtLHU0nRAB2Ec_JcBrq1q36BfAPvj44AY3qQXcLjIs7QoLFgmESvBrICyC-aKXPavmlUgcreVmXtDMiL8l1FIzyiwXbYrL0rugqjM'); background-size: cover;">
+</div>
+</div>
+</header>
+<main class="flex-1 p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 overflow-hidden h-full pb-8">
+<section class="lg:col-span-3 flex flex-col h-full overflow-hidden">
+<div class="glass-panel rounded-3xl h-full flex flex-col shadow-sm transition-all hover:shadow-md duration-300 border border-white/40">
+<div class="p-6 border-b border-slate-200/30">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold tracking-widest text-primary uppercase opacity-70">TIMELINE</span>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">calendar_month</span>
+</div>
+<h3 class="text-xl font-bold serif-font text-slate-800 dark:text-slate-100">时光印记</h3>
+<p class="text-xs text-slate-500 mt-1 dark:text-slate-400">岁月的沉淀与回响</p>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-8 relative">
+<div class="absolute left-9 top-6 bottom-6 w-px bg-gradient-to-b from-primary/20 via-slate-300/40 to-transparent"></div>
+<div class="relative">
+<h4 class="text-lg font-bold text-primary serif-font mb-4 pl-10">二零二四</h4>
+<div class="relative pl-10 mb-6 group cursor-pointer">
+<div class="absolute left-[11px] top-1.5 w-2 h-2 rounded-full bg-white border border-primary group-hover:scale-125 transition-transform"></div>
+<span class="text-xs font-medium text-slate-400 block mb-1">十月 Oct</span>
+<p class="text-sm font-medium text-slate-700 dark:text-slate-200 group-hover:text-primary transition-colors">秋日私语与代码重构</p>
+</div>
+<div class="relative pl-10 mb-6 group cursor-pointer">
+<div class="absolute left-[11px] top-1.5 w-2 h-2 rounded-full bg-white border border-slate-300 group-hover:border-primary group-hover:scale-125 transition-all"></div>
+<span class="text-xs font-medium text-slate-400 block mb-1">八月 Aug</span>
+<p class="text-sm font-medium text-slate-700 dark:text-slate-200 group-hover:text-primary transition-colors">夏末的最后一次旅行</p>
+</div>
+</div>
+<div class="relative">
+<h4 class="text-lg font-bold text-slate-400 serif-font mb-4 pl-10">二零二三</h4>
+<div class="relative pl-10 mb-6 group cursor-pointer">
+<div class="absolute left-[11px] top-1.5 w-2 h-2 rounded-full bg-white border border-slate-300 group-hover:border-primary group-hover:scale-125 transition-all"></div>
+<span class="text-xs font-medium text-slate-400 block mb-1">十二月 Dec</span>
+<p class="text-sm font-medium text-slate-700 dark:text-slate-200 group-hover:text-primary transition-colors">年度总结：寻找内心的秩序</p>
+</div>
+<div class="relative pl-10 mb-6 group cursor-pointer">
+<div class="absolute left-[11px] top-1.5 w-2 h-2 rounded-full bg-white border border-slate-300 group-hover:border-primary group-hover:scale-125 transition-all"></div>
+<span class="text-xs font-medium text-slate-400 block mb-1">五月 May</span>
+<p class="text-sm font-medium text-slate-700 dark:text-slate-200 group-hover:text-primary transition-colors">开启独立开发之旅</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="lg:col-span-5 flex flex-col h-full overflow-hidden">
+<div class="glass-panel rounded-3xl h-full flex flex-col shadow-lg border border-white/60 relative overflow-hidden">
+<div class="p-6 border-b border-slate-200/30 flex justify-between items-center bg-white/30 backdrop-blur-md sticky top-0 z-20">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-semibold tracking-widest text-primary uppercase opacity-70">ARTICLES</span>
+</div>
+<h3 class="text-xl font-bold serif-font text-slate-800 dark:text-slate-100">静思录</h3>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-white/50 rounded-lg text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button class="p-2 bg-white/50 rounded-lg text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">view_agenda</span>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-5">
+<article class="group relative bg-white/40 dark:bg-black/20 hover:bg-white/70 dark:hover:bg-black/30 rounded-2xl p-6 transition-all duration-300 border border-transparent hover:border-white/50 shadow-sm hover:shadow-md cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">设计哲学</span>
+<span class="text-xs text-slate-400 font-display">2024.10.24</span>
+</div>
+<h2 class="text-xl font-bold serif-font text-slate-800 dark:text-slate-100 mb-2 group-hover:text-primary transition-colors">留白的艺术：少即是多的数字空间</h2>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                                在信息过载的时代，我们如何在数字界面中寻找呼吸感？探讨极简主义不仅仅是一种视觉风格，更是一种思维方式。
+                            </p>
+<div class="mt-4 flex items-center gap-4 text-xs text-slate-400 group-hover:text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 1.2k</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">favorite</span> 48</span>
+<span class="ml-auto text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">阅读全文 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</article>
+<article class="group relative bg-white/40 dark:bg-black/20 hover:bg-white/70 dark:hover:bg-black/30 rounded-2xl p-6 transition-all duration-300 border border-transparent hover:border-white/50 shadow-sm hover:shadow-md cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 text-xs font-medium">技术笔记</span>
+<span class="text-xs text-slate-400 font-display">2024.09.15</span>
+</div>
+<h2 class="text-xl font-bold serif-font text-slate-800 dark:text-slate-100 mb-2 group-hover:text-primary transition-colors">构建高性能的前端动画引擎</h2>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                                深入解析 requestAnimationFrame 与 CSS 变换的协同工作原理，打造丝滑的交互体验。
+                            </p>
+<div class="mt-4 flex items-center gap-4 text-xs text-slate-400 group-hover:text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 856</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">favorite</span> 124</span>
+<span class="ml-auto text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">阅读全文 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</article>
+<article class="group relative bg-white/40 dark:bg-black/20 hover:bg-white/70 dark:hover:bg-black/30 rounded-2xl p-6 transition-all duration-300 border border-transparent hover:border-white/50 shadow-sm hover:shadow-md cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 text-xs font-medium">生活随笔</span>
+<span class="text-xs text-slate-400 font-display">2024.08.30</span>
+</div>
+<h2 class="text-xl font-bold serif-font text-slate-800 dark:text-slate-100 mb-2 group-hover:text-primary transition-colors">雨天的咖啡馆与一本旧书</h2>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                                那个午后，窗外的雨声成了最好的背景音，书页翻动的声音，是时间流逝最温柔的注脚。
+                            </p>
+<div class="mt-4 flex items-center gap-4 text-xs text-slate-400 group-hover:text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 532</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">favorite</span> 67</span>
+<span class="ml-auto text-primary opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">阅读全文 <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="lg:col-span-4 flex flex-col h-full overflow-hidden">
+<div class="glass-panel rounded-3xl h-full flex flex-col shadow-sm transition-all hover:shadow-md duration-300 border border-white/40">
+<div class="p-6 border-b border-slate-200/30">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold tracking-widest text-primary uppercase opacity-70">HUB</span>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">category</span>
+</div>
+<h3 class="text-xl font-bold serif-font text-slate-800 dark:text-slate-100">分类与灵感</h3>
+</div>
+<div class="flex-1 overflow-y-auto p-4">
+<div class="grid grid-cols-2 gap-3 h-full content-start">
+<div class="col-span-2 bg-gradient-to-br from-indigo-50 to-white/50 dark:from-indigo-900/20 dark:to-slate-800/20 p-5 rounded-2xl border border-indigo-100/50 hover:border-indigo-300/50 transition-all group cursor-pointer h-32 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-white rounded-lg shadow-sm text-indigo-600">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<span class="text-2xl font-bold text-slate-200 group-hover:text-indigo-200 transition-colors">01</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-100 group-hover:text-indigo-600 transition-colors">代码工程</h4>
+<p class="text-xs text-slate-500 mt-1">12 个活跃项目 · 前端探索</p>
+</div>
+</div>
+<div class="col-span-1 bg-gradient-to-br from-amber-50 to-white/50 dark:from-amber-900/20 dark:to-slate-800/20 p-4 rounded-2xl border border-amber-100/50 hover:border-amber-300/50 transition-all group cursor-pointer h-32 flex flex-col justify-between">
+<div class="p-2 w-fit bg-white rounded-lg shadow-sm text-amber-600 mb-2">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-slate-800 dark:text-slate-100 group-hover:text-amber-600 transition-colors">奇思妙想</h4>
+<p class="text-xs text-slate-500 mt-0.5">灵感碎片</p>
+</div>
+</div>
+<div class="col-span-1 bg-gradient-to-br from-emerald-50 to-white/50 dark:from-emerald-900/20 dark:to-slate-800/20 p-4 rounded-2xl border border-emerald-100/50 hover:border-emerald-300/50 transition-all group cursor-pointer h-32 flex flex-col justify-between">
+<div class="p-2 w-fit bg-white rounded-lg shadow-sm text-emerald-600 mb-2">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-slate-800 dark:text-slate-100 group-hover:text-emerald-600 transition-colors">阅·读</h4>
+<p class="text-xs text-slate-500 mt-0.5">书单与笔记</p>
+</div>
+</div>
+<div class="col-span-2 bg-white/40 hover:bg-white/60 dark:bg-slate-800/40 p-4 rounded-2xl border border-transparent hover:border-primary/20 transition-all group cursor-pointer flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-200/50 flex items-center justify-center text-slate-500 group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-slate-800 dark:text-slate-100">光影记录</h4>
+<p class="text-xs text-slate-500">摄影作品集</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+<div class="col-span-2 bg-white/40 hover:bg-white/60 dark:bg-slate-800/40 p-4 rounded-2xl border border-transparent hover:border-primary/20 transition-all group cursor-pointer flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-slate-200/50 flex items-center justify-center text-slate-500 group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">headphones</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-slate-800 dark:text-slate-100">听觉漫游</h4>
+<p class="text-xs text-slate-500">每月歌单</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+</div>
+<div class="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/10 text-center">
+<p class="text-xs text-slate-500 mb-2">"保持饥饿，保持愚蠢"</p>
+<button class="text-xs font-semibold text-primary hover:underline">查看所有标签</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+
+</body></html>
