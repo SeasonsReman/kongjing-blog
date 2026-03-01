@@ -196,7 +196,17 @@ const formatNumber = (num) => {
 const filteredPosts = computed(() => {
   let result = posts.value
   if (activeCategory.value) {
-    result = result.filter(p => p.category === activeCategory.value)
+    // Map visual UI categories to actual database categories
+    const catMap = {
+      '项目': '项目',
+      '随笔': '随笔',
+      '读书': '读书',
+      '摄影': '光影记录', // Assuming '摄影' visually represents '光影记录' in DB based on seeding
+      '生活': '生活随笔'  // Assuming '生活' translates to '听觉漫游' or similar
+    }
+    const dbCat = catMap[activeCategory.value] || activeCategory.value
+    // Use .includes to be a bit more lenient since db categories might have suffixes like '随笔 essay'
+    result = result.filter(p => p.category && p.category.includes(dbCat))
   }
   if (activeFilter.value) {
     result = result.filter(p => {

@@ -23,7 +23,7 @@
           
           <div v-else class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             <article 
-              v-for="(post, index) in posts" 
+              v-for="(post, index) in filteredPosts" 
               :key="post.id"
               @click="handlePostClick(post)"
               class="break-inside-avoid relative bg-white/20 backdrop-blur-lg rounded-[2rem] p-6 transition-all duration-500 border border-white/40 hover:border-white/80 hover:bg-white/40 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05),0_0_30px_rgba(255,255,255,0.6)] cursor-pointer group flex flex-col overflow-hidden animate-fade-in-up w-full"
@@ -70,13 +70,13 @@
     <!-- Right Sidebar: Moods & Categories -->
     <section class="lg:col-span-3 flex flex-col h-full overflow-hidden space-y-6">
       <!-- MOODS -->
-      <div class="glass-panel flex-1 rounded-3xl p-6 shadow-sm border border-white/40 flex flex-col">
-        <div class="flex items-center gap-2 mb-6">
+      <div class="glass-panel flex-1 min-h-[50%] h-1/2 rounded-3xl p-6 shadow-sm border border-white/40 flex flex-col overflow-hidden">
+        <div class="flex items-center gap-2 mb-6 shrink-0">
           <span class="material-symbols-outlined text-primary">psychology</span>
           <span class="text-xs font-semibold tracking-widest text-slate-600 uppercase">MOODS</span>
         </div>
         
-        <div class="flex flex-col gap-3">
+        <div class="flex flex-col gap-3 overflow-y-auto custom-scrollbar pr-2 pb-4">
           <button 
             v-for="mood in moods" 
             :key="mood.name"
@@ -91,12 +91,12 @@
       </div>
 
       <!-- CATEGORIES -->
-      <div class="glass-panel flex-1 rounded-3xl p-6 shadow-sm border border-white/40 flex flex-col">
-        <div class="flex items-center gap-2 mb-6">
+      <div class="glass-panel flex-1 min-h-[50%] h-1/2 rounded-3xl p-6 shadow-sm border border-white/40 flex flex-col overflow-hidden">
+        <div class="flex items-center gap-2 mb-6 shrink-0">
           <span class="text-xs font-semibold tracking-widest text-slate-600 uppercase">CATEGORIES</span>
         </div>
         
-        <div class="space-y-3">
+        <div class="space-y-3 overflow-y-auto custom-scrollbar pr-2 pb-4">
           <div 
             class="flex justify-between items-center text-sm group cursor-pointer px-3 py-2 rounded-xl transition-all duration-300" 
             :class="activeCategory === cat.name ? 'bg-primary/10 border border-primary/20 shadow-sm' : 'hover:bg-white/40 border border-transparent'"
@@ -150,10 +150,8 @@ const categories = [
 const fetchPosts = async () => {
   loading.value = true
   try {
-    const params = {}
-    if (activeMood.value) params.mood = activeMood.value
-    if (activeCategory.value) params.category = activeCategory.value
-    const res = await getPosts(params)
+    // Fetch ALL posts once, filter locally for speed and smooth transitions
+    const res = await getPosts()
     posts.value = res.data
   } catch (e) {
     console.error(e)
@@ -162,14 +160,28 @@ const fetchPosts = async () => {
   }
 }
 
+const filteredPosts = computed(() => {
+  let result = posts.value
+  
+  if (activeMood.value) {
+    result = result.filter(p => p.mood === activeMood.value)
+  }
+  
+  if (activeCategory.value) {
+    // Exact match for the left name in the categories array
+    const targetCat = activeCategory.value
+    result = result.filter(p => p.category && p.category.includes(targetCat))
+  }
+  
+  return result
+})
+
 const toggleMood = (mood) => {
   activeMood.value = activeMood.value === mood ? null : mood
-  fetchPosts()
 }
 
 const toggleCategory = (cat) => {
   activeCategory.value = activeCategory.value === cat ? null : cat
-  fetchPosts()
 }
 
 const formatDate = (dateStr) => {
