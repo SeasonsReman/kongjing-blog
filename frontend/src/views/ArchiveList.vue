@@ -38,7 +38,7 @@
 
     <!-- Center: Articles List -->
     <section class="lg:col-span-5 flex flex-col h-full overflow-hidden relative">
-      <div class="glass-panel rounded-3xl h-full flex flex-col shadow-lg border border-white/60">
+      <div class="glass-panel rounded-3xl h-full flex flex-col shadow-lg border border-white/60 relative overflow-hidden">
         <div class="p-6 border-b border-slate-200/30 flex justify-between items-center bg-white/30 backdrop-blur-md sticky top-0 z-20">
           <div>
             <div class="flex items-center gap-2 mb-1">
