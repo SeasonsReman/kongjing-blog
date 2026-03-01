@@ -2,11 +2,9 @@
   <div class="relative min-h-screen w-full overflow-hidden bg-background-light text-slate-900">
     <!-- Animated Background Layer -->
     <div class="fixed inset-0 z-0 w-full h-full pointer-events-none overflow-hidden bg-gradient-to-br from-[#fdfbfb] via-[#e2d1c3] to-[#f4d4ce]">
-      <!-- Animated Sunset Clouds Image (Soft Pastel) -->
-      <div 
-        class="absolute inset-[-10%] w-[120%] h-[120%] bg-cover bg-center bg-no-repeat opacity-80 mix-blend-multiply animate-drift"
-        style="background-image: url('https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=2500')"
-      ></div>
+      
+      <!-- Dynamic Slideshow -->
+      <BackgroundSlideshow class="opacity-80 mix-blend-multiply animate-drift" />
       
       <!-- Gradient Overlays for Depth and Glassmorphism feel -->
       <div class="absolute inset-0 bg-gradient-to-t from-white/60 via-white/20 to-transparent"></div>
@@ -23,6 +21,7 @@
 
 <script setup>
 import AppNavbar from '@/components/AppNavbar.vue'
+import BackgroundSlideshow from '@/components/BackgroundSlideshow.vue'
 </script>
 
 <style>
